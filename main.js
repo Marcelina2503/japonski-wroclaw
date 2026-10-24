@@ -7,7 +7,7 @@ const WIDOK_DOMYSLNY = [51.1106, 17.0311];
 const ZOOM_DOMYSLNY = 15;
 
 // Obszar, poza który użytkownik nie może przesuwać mapy (okolice Starego Miasta)
-const GRANICE_MAPY = L.latLngBounds([51.090, 17.000], [51.130, 17.070]);
+const GRANICE_MAPY = L.latLngBounds([51.093, 17.005], [51.127, 17.065]);
 
 // Autorskie tło
 let tlo = L.tileLayer('./tlo/{z}/{x}/{y}.png', {
