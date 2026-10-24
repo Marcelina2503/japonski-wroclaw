@@ -1,0 +1,206 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FAF8F5; /* Kremowy papier */
+}
+
+#kontener {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#panel_boczny {
+    width: 350px;
+    flex-shrink: 0;
+    background-color: #FAF8F5;
+    border-right: 2px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.tytul {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 30px;
+    border-bottom: 1px solid #E2E8F0;
+    position: relative;
+    color: #2D3748;
+}
+
+.czerwony {
+    color: #C53030;
+}
+
+.pieczatka {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #C53030;
+    color: #C53030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+#opis_obiektu {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-left: 4px solid #C53030;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    line-height: 1.5;
+}
+
+#opis_obiektu img {
+    max-width: 100%;
+    height: auto;
+}
+
+#mapa {
+    flex: 1;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+/* Kontrolka wyboru podkładów */
+.leaflet-control-layers {
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    padding: 10px 15px !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: #2D3748 !important;
+}
+
+.leaflet-control-layers label {
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.leaflet-control-layers label:last-child {
+    margin-bottom: 0;
+}
+
+.leaflet-control-layers input[type="radio"] {
+    accent-color: #C53030;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.leaflet-control-layers span {
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+/* Legenda (pełni także funkcję filtra kategorii) */
+.legenda-mapy {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2D3748;
+    font-size: 14px;
+}
+
+.legenda-mapy label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.legenda-mapy label:last-child {
+    margin-bottom: 0;
+}
+
+.legenda-mapy input[type="checkbox"] {
+    accent-color: #C53030;
+    width: 16px;
+    height: 16px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+}
+
+.legenda-mapy img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.leaflet-measure-resultpopup {
+    white-space: normal !important;
+}
+
+/* Klastry w kolorystyce aplikacji */
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+    background-color: rgba(197, 48, 48, 0.5) !important;
+}
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+    background-color: rgba(197, 48, 48, 0.9) !important;
+    color: white !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: bold;
+}
+
+/* Układ responsywny: telefony i wąskie okna */
+@media (max-width: 768px) {
+    #kontener {
+        flex-direction: column;
+    }
+
+    #mapa {
+        order: 1;
+        flex: 1 1 60%;
+        min-height: 0;
+        height: auto;
+    }
+
+    #panel_boczny {
+        order: 2;
+        width: 100%;
+        max-height: 40vh;
+        border-right: none;
+        border-top: 2px solid #E2E8F0;
+    }
+
+    .tytul {
+        font-size: 20px;
+        padding: 12px 20px;
+    }
+
+    .pieczatka {
+        top: 12px;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    #opis_obiektu {
+        margin: 12px;
+        padding: 14px;
+    }
+
+    .legenda-mapy {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

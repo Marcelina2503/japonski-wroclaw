@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "Sklepy",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Nazwa": "Automat z kartami kolekcjonerskimi", "Adres": "plac Dominikański 3, 50-159 Wrocław", "Opis": "W asortymencie maszyny znajdują się oryginalne karty kolekcjonerskie z najpopularniejszych japońskich dzieł animowanych, takich jak Pokemon, Naruto, czy One Piece. To wyraźny ślad japońskiej popkultury w przestrzeni komercyjnej.", "Zdjęcie": "files/sklepy_20260704131251001_1000059404.jpg", "Asortyment": "Mangastore", "Strona_www": null }, "geometry": { "type": "Point", "coordinates": [ 17.039689615855778, 51.108216386819187 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Nazwa": "Mochimat", "Adres": "plac Dominikański 3, 50-159 Wrocław", "Opis": "Automat Mochimat prezentuje współczesne japońskie trendy kulinarne. Specjalizuje się w sprzedaży mochi - tradycyjnych japońskich klusek ryżowych, podawanych w nowoczesnej formie deserów lodowych.", "Zdjęcie": "files/sklepy_20260704131542483_1000059405.jpg", "Asortyment": null, "Strona_www": null }, "geometry": { "type": "Point", "coordinates": [ 17.039693304382656, 51.108264329002274 ] } },
+{ "type": "Feature", "properties": { "id": 3, "Nazwa": "Satori", "Adres": "Oławska 16, 50-123 Wrocław", "Opis": "Nowe miejsce na mapie Starego Miasta - otwarty w kwietniu 2026 roku sklep charakteryzuje się sprzedażą gadżetów z anime, mang. W kolekcji posiada m.in. figurki kolekcjonerskie, pluszaki czy najnowsze tomy mang.", "Zdjęcie": "files/sklepy_20260704132123378_1000059410.jpg", "Asortyment": "Mangastore", "Strona_www": "https://www.facebook.com/SklepSatori/" }, "geometry": { "type": "Point", "coordinates": [ 17.035720379127575, 51.108510606273164 ] } },
+{ "type": "Feature", "properties": { "id": 4, "Nazwa": "Yatta.pl", "Adres": "Kiełbaśnicza 25, 50-110 Wrocław", "Opis": "Punkt związany z japońską popkulturą i ruchem otaku. To najbardziej rozpoznawalny sklep tego typu w ścisłym centrum Wrocławia. Posiada ogromny asortyment licencjonowanych produktów związanych z mangą i anime.", "Zdjęcie": "files/sklepy_20260704134958893_1000059419.jpg", "Asortyment": "Mangastore", "Strona_www": "https://yatta.pl/" }, "geometry": { "type": "Point", "coordinates": [ 17.029662714683241, 51.111655046446835 ] } }
+]
+}

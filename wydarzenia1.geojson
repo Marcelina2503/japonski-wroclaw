@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "wydarzenia1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Nazwa": "NAMI Airando", "Adres": "Wyspa Słodowa", "Opis": "Cykliczny, plenerowy festiwal kultury japońskiej organizowany przez fundację NAMI. Wydarzenie oferuje pokazy tradycyjnych sztuk walki (kendo, aikido), koncerty na bębnach taiko, warsztaty z kaligrafii oraz strefę gastronomiczną a japońskim street f", "Zdjęcie": null, "Cykl_w_rok": "1", "data_wizyt": "2026-08-22", "Strona_www": "https://namiairando.fundacja-nami.pl/" }, "geometry": { "type": "Point", "coordinates": [ 17.038248418859219, 51.115979671831845 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Nazwa": "Festiwal Sakura", "Adres": "Plac Wolności, 50-529 Wrocław", "Opis": "Festiwal Sakura to pełne wrażeń wydarzenie plenerowe, przenoszące odwiedzających na azjatycką ulicę. Impreza to przede wszystkim ogromna strefa gastronomiczna, jak i liczne wydarzenia kulturalne, takie jak warsztaty origami, czy pokazy sztuk walki", "Zdjęcie": null, "Cykl_w_rok": null, "data_wizyt": null, "Strona_www": "https://festiwalsakura.pl/" }, "geometry": { "type": "Point", "coordinates": [ 17.028032203184232, 51.106435209026792 ] } },
+{ "type": "Feature", "properties": { "id": 3, "Nazwa": "Kino Nowe Horyzonty", "Adres": "ul. Kazimierza Wielkiego 19a/21, 50-077 Wrocław", "Opis": "Największe w Polsce kino studyjne, które odgrywa istotną rolę w popularyzacji japońskiej kinematografii we Wrocławiu. W jego repertuarze regularnie pojawiają się dzieła japońskich twórców - od animacji ze Studia Ghibli, po nagradzane nowości", "Zdjęcie": null, "Cykl_w_rok": null, "data_wizyt": null, "Strona_www": "https://www.kinonh.pl/" }, "geometry": { "type": "Point", "coordinates": [ 17.026342919528769, 51.109501684895427 ] } }
+]
+}

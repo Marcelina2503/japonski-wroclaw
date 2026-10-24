@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "Edukacja1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Nazwa": "Azjatyckie centrum językowe", "Adres": "Dom Handlowy Feniks, Szewska 75/77, 50-100 Wrocław", "Opis": "Jeden z najważniejszych punktów edukacyjnych, zajmujących się profesjonalnym nauczaniem języków azjatyckich, w tym języka japońskiego na różnych poziomach zaawansowania. Szkoła oferuje także warsztaty dotyczące japońskiej kaligrafii czy ety", "Zdjęcie": null, "Rodzaj_edu": "Szkoła językowa", "Grupa_doc": null, "Strona_www": "https://www.acj.edu.pl/" }, "geometry": { "type": "Point", "coordinates": [ 17.034055719718044, 51.109302540886688 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Nazwa": "ICHIGO Japońskie Centrum Kultury i Biznesu", "Adres": "ul. Stanisława Leszczyńskiego 4/lokal 25, 50-078 Wrocław", "Opis": "Wrocławski oddział ogólnopolskiej sieci. Głównym filarem działalności jest w pełni profesjonalna szkoła językowa, w której zajęcia są prowadzone przez wykwalifikowanych Japończyków. Centrum promuje kulturę japońską i wpiera relacje bizn", "Zdjęcie": null, "Rodzaj_edu": null, "Grupa_doc": null, "Strona_www": "https://www.ichigo.pl/oddzial/wroclaw" }, "geometry": { "type": "Point", "coordinates": [ 17.031600110653276, 51.107840315791485 ] } }
+]
+}
