@@ -1,14 +1,4 @@
-// Plik zrodla_zdjec.js
-// Autorzy, źródła i licencje zdjęć. Klucze muszą być identyczne z polem "Nazwa" w dane.js.
-//
-// typ: "wlasne"  -> zdjęcie wykonane przez autorkę pracy
-// typ: "commons" -> zdjęcie z Wikimedia Commons (autor, plik i licencja wg strony pliku)
-// poglad: true   -> zdjęcie/grafika poglądowa (nie przedstawia dokładnie danego obiektu)
-// plik:          -> nazwa pliku na Commons (z paska adresu, ze znakami _ zamiast spacji);
-//                   gdy pusta, podpis pokaże "Wikimedia Commons" bez linku do pliku
-
 const ZRODLA_ZDJEC = {
-    // --- zdjęcia własne ---
     "NAMI Airando":                         { typ: "wlasne" },
     "Mochimat":                             { typ: "wlasne" },
     "Automat z kartami kolekcjonerskimi":   { typ: "wlasne" },
@@ -20,7 +10,6 @@ const ZRODLA_ZDJEC = {
     "Sushi Lovers":                         { typ: "wlasne" },
     "WSHOKU Sushi & Ramen Bar":             { typ: "wlasne" },
 
-    // --- Wikimedia Commons: zdjęcia danych obiektów ---
     "Ogród botaniczny Uniwersytetu Wrocławskiego": {
         typ: "commons",
         autor: "Barbara Maliszewska",
@@ -46,7 +35,6 @@ const ZRODLA_ZDJEC = {
         licencjaUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.pl"
     },
 
-    // --- Wikimedia Commons: zdjęcia i grafiki poglądowe ---
     "Azjatyckie centrum językowe": {
         typ: "commons",
         poglad: true,
@@ -74,7 +62,6 @@ const ZRODLA_ZDJEC = {
     }
 };
 
-// Zabezpieczenie przed wstrzyknięciem znaczników HTML
 function escZ(tekst) {
     return String(tekst)
         .replace(/&/g, '&amp;')
@@ -85,9 +72,6 @@ function escZ(tekst) {
 
 const STYL_LINKU_ZRODLA = 'color: #C53030; text-decoration: none;';
 
-// Link do strony pliku. Adres Plik:... na pl.wikipedia.org działa zarówno dla plików wgranych
-// lokalnie na Wikipedię, jak i dla plików z Wikimedia Commons. Pole "zrodlo" (domyślnie
-// "Wikimedia Commons") to tylko nazwa wyświetlana w podpisie.
 function linkDoPlikuCommons(z) {
     let nazwaZrodla = z.zrodlo || 'Wikimedia Commons';
     if (!z.plik) {
@@ -101,7 +85,7 @@ function linkDoLicencji(z) {
     return '<a href="' + escZ(z.licencjaUrl) + '" target="_blank" rel="noopener" style="' + STYL_LINKU_ZRODLA + '">' + escZ(z.licencja) + '</a>';
 }
 
-// Podpis pod zdjęciem w panelu bocznym (zwraca HTML; pusty tekst, gdy brak wpisu)
+
 function podpisZdjecia(nazwa) {
     let z = ZRODLA_ZDJEC[nazwa];
     if (!z) {
@@ -115,7 +99,7 @@ function podpisZdjecia(nazwa) {
     return przedrostek + escZ(z.autor) + ', ' + linkDoPlikuCommons(z) + ', ' + linkDoLicencji(z);
 }
 
-// Lista "Źródła zdjęć" (rozwijana w panelu bocznym)
+
 function wypelnijZrodlaZdjec(idKontenera) {
     let el = document.getElementById(idKontenera);
     if (!el) {
