@@ -6,23 +6,16 @@
     <link rel="icon" href="data:,">
     <title>Japoński Wrocław - Projekt Inżynierski</title>
 
-    <!--Zewnętrzne biblioteki CSS-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <link href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css" />
-
-    <!--Własne style-->
     <link rel="stylesheet" href="./style.css" type="text/css" />
-
-    <!--Zewnętrzne biblioteki JS-->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
     <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
-
-    <!--Własne dane-->
     <script src="./dane.js"></script>
     <script src="./zrodla_zdjec.js"></script>
 
@@ -40,19 +33,14 @@
                 <p style="color: #595959; font-style: italic; text-align: center;">
                     Wybierz obiekt na mapie, aby zobaczyć szczegóły.
                 </p>
-                <!-- Źródła zdjęć (wypełniane w main.js na podstawie zrodla_zdjec.js) -->
             <details id="zrodla_zdjec" style="margin: 0 20px 20px 20px; font-size: 12px; color: #595959; line-height: 1.5;">
                 <summary style="cursor: pointer; font-weight: bold;">Źródła zdjęć</summary>
                 <div id="zrodla_zdjec_tresc"></div>
             </details>
             </div>
         </div>
-
-        <!-- Prawa strona (Mapa) -->
         <div id="mapa"></div>
     </div>
-
-    <!-- Główny skrypt aplikacji -->
     <script src="./main.js"></script>
 
 </body>
