@@ -1,12 +1,7 @@
-// ==========================================
-// 1. INICJALIZACJA MAPY I PODKŁADY
-// ==========================================
-
-// Widok domyślny (Stare Miasto) - używany przy starcie i przez przycisk "Home"
 const WIDOK_DOMYSLNY = [51.1106, 17.0311];
 const ZOOM_DOMYSLNY = 15;
 
-// Obszar, poza który użytkownik nie może przesuwać mapy (okolice Starego Miasta)
+
 const GRANICE_MAPY = L.latLngBounds([51.093, 17.005], [51.127, 17.065]);
 
 // Autorskie tło
@@ -52,9 +47,7 @@ L.control.scale({
     imperial: false
 }).addTo(mapa);
 
-// ==========================================
 // 2. KLASTROWANIE I WSPÓLNA LOGIKA (DRY)
-// ==========================================
 
 let klasterObiektow = L.markerClusterGroup({
     showCoverageOnHover: false,
@@ -62,7 +55,6 @@ let klasterObiektow = L.markerClusterGroup({
     spiderfyOnMaxZoom: true
 });
 
-// Zabezpieczenie przed wstrzyknięciem znaczników HTML z atrybutów
 function esc(tekst) {
     return String(tekst)
         .replace(/&/g, '&amp;')
@@ -74,15 +66,13 @@ function esc(tekst) {
 // UNIWERSALNA FUNKCJA GENERUJĄCA PANEL BOCZNY (Zasada DRY)
 function generujPanelBoczny(feature, layer) {
     layer.on('click', function () {
-        // Współrzędne obiektu pobieramy z geometrii GeoJSON (kolejność: długość, szerokość),
-        // a nie ze zdarzenia kliknięcia, które zwraca punkt kliknięcia kursora.
         let lng = feature.geometry.coordinates[0];
         let lat = feature.geometry.coordinates[1];
         let linkDoNawigacji = 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lng;
 
-        let p = feature.properties; // Skrót dla wygody
+        let p = feature.properties;
 
-        // Budowanie treści panelu
+   
         let tresc = '<h3 style="color: #C53030; margin-top: 0;">' + esc(p.Nazwa || 'Brak nazwy') + '</h3>';
         tresc += '<hr style="border: 0; border-top: 1px solid #E2E8F0; margin: 15px 0;">';
 
@@ -117,16 +107,14 @@ function generujPanelBoczny(feature, layer) {
             tresc += '<p>' + esc(p.Opis) + '</p>';
         }
 
-        // Przycisk nawigacji
+      
         tresc += '<a href="' + linkDoNawigacji + '" target="_blank" rel="noopener" style="display: block; text-align: center; background-color: #C53030; color: white; padding: 12px; margin-top: 20px; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">Nawiguj do celu 🚗</a>';
 
         document.getElementById('opis_obiektu').innerHTML = tresc;
     });
 }
 
-// ==========================================
-// 3. DEFINICJE WARSTW
-// ==========================================
+
 
 // Restauracje
 let ikonaRestauracji = L.icon({ iconUrl: './rysunek_Restauracje.svg', iconSize: [40, 40], iconAnchor: [20, 40] });
@@ -171,11 +159,7 @@ klasterObiektow.addLayer(warstwaWydarzenia);
 mapa.addLayer(klasterObiektow);
 wypelnijZrodlaZdjec('zrodla_zdjec_tresc');
 
-// ==========================================
-// 4. NARZĘDZIA DODATKOWE (Legenda z filtrem, Geolokalizacja, Pomiary)
-// ==========================================
 
-// Kategorie widoczne w legendzie (kolejność = kolejność w legendzie)
 let kategorieLegendy = [
     { nazwa: 'Sklepy',       alt: 'Sklep',       ikona: './rysunek_Sklepy.svg',       warstwa: warstwaSklepy },
     { nazwa: 'Restauracje',  alt: 'Restauracja', ikona: './rysunek_Restauracje.svg',  warstwa: warstwaRestauracje },
@@ -184,7 +168,7 @@ let kategorieLegendy = [
     { nazwa: 'Wydarzenia',   alt: 'Wydarzenia',  ikona: './rysunek_Wydarzenia.svg',   warstwa: warstwaWydarzenia }
 ];
 
-// Legenda pełni jednocześnie funkcję filtra: pole wyboru włącza/wyłącza kategorię
+
 let legenda = L.control({ position: 'bottomright' });
 legenda.onAdd = function () {
     let div = L.DomUtil.create('div', 'legenda-mapy');
@@ -267,7 +251,7 @@ przyciskGeo.onAdd = function () {
 };
 przyciskGeo.addTo(mapa);
 
-// Znacznik pozycji użytkownika: czerwona kropka + okrąg błędu (zamiast domyślnej ikony Leaflet)
+
 let znacznikGeo;
 let okragDokladnosci;
 mapa.on('locationfound', function (e) {
