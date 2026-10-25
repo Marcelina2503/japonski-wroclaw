@@ -1,7 +1,3 @@
-// Plik dane.js
-// Współrzędne zaokrąglono do 6 miejsc po przecinku (ok. 0,1 m) - dokładność
-// pomiaru GNSS wynosiła ok. 4 m, więc dalsze miejsca dziesiętne nie niosą informacji.
-
 let wydarzenia = {
 "type": "FeatureCollection",
 "name": "wydarzenia1",
